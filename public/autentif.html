@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>React App</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="autent.js"></script> -->
+  </head>
+  <body>
+    <form action="#">
+        <div class = 'wrapper'>
+            <h2>Welcom</h2>
+            <div class="input-field">
+                <input type="text" id="log" required>
+                <label>Enter your login</label>
+            </div>
+            <div class="input-field">
+                <input type="password" id="pas" required>
+                <label>Enter your password</label>
+            </div>
+            <button type="submit" onclick=sub(event)>Login</button>
+            <p id="message" class="message"></p>
+
+          </div>
+    </form>
+
+
+
+    <script>
+      const correctUsername = "Denis"; // Замените на правильный логин
+      const correctPassword = "12345"; // Замените на правильный пароль
+
+      function sub(event) {
+          event.preventDefault(); // Предотвращаем отправку формы
+
+          const username = document.getElementById('log').value;
+          const password = document.getElementById('pas').value;
+          const message = document.getElementById('message');
+
+          if (username === correctUsername && password === correctPassword) {
+              // Открытие новой страницы
+              window.location.href = 'panel.html'; // Замените на нужный URL
+          } else {
+              message.textContent = 'Неправильный логин или пароль.';
+          }
+      }
+  </script>
+  </body>
+</html>
