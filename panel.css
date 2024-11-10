@@ -1,0 +1,163 @@
+/* Основные стили для страницы */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Контейнер для всех элементов страницы */
+.wrapper {
+    width: 100%;
+    max-width: 800px;
+    margin: 60px auto; /* Увеличен внешний отступ */
+    padding: 30px; /* Увеличен внутренний отступ */
+    background-color: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Немного увеличен эффект тени */
+    border-radius: 8px;
+}
+
+/* Стили для заголовка панели */
+.header {
+    font-size: 24px;
+    font-weight: 600;
+    color: #4CAF50;
+    text-align: center;
+    margin-bottom: 40px; /* Увеличен отступ снизу */
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 15px; /* Увеличен внутренний отступ */
+}
+
+/* Стили для формы */
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Увеличен отступ между элементами формы */
+}
+
+/* Стили для полей ввода */
+input, select, button {
+    padding: 15px 20px; /* Увеличен внутренний отступ */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    margin-bottom: 20px; /* Добавлен отступ снизу для каждого инпута */
+}
+
+/* Стили для полей на фокусе */
+input:focus, select:focus, button:focus {
+    border-color: #4CAF50;
+}
+
+/* Стили для поля загрузки изображений */
+input[type="file"] {
+    padding: 10px 0;
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Стиль для выпадающего списка */
+select {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+}
+
+/* Кнопка отправки */
+button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Добавлен отступ сверху */
+    font-weight: bold;
+}
+
+/* Эффект при наведении на кнопку */
+button:hover {
+    background-color: #45a049;
+}
+
+/* Плейсхолдеры в полях */
+::placeholder {
+    color: #888;
+}
+
+/* Общее оформление для блоков */
+.field input, .field select {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Стили для сообщений */
+.message {
+    text-align: center;
+    margin-top: 30px; /* Увеличен отступ сверху */
+    font-size: 20px; /* Увеличен размер шрифта */
+    color: #4CAF50;
+}
+
+/* Стили для заголовков */
+h1 {
+    font-size: 36px; /* Увеличен размер шрифта */
+    color: #333;
+    margin-bottom: 40px; /* Увеличен отступ снизу */
+}
+
+/* Стили для ссылок в меню */
+a {
+    display: block;
+    margin-top: 10px;
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Эффект при наведении на ссылки */
+a:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Стиль для блока меню */
+.menu {
+    margin-top: 30px; /* Добавлен отступ сверху для меню */
+    padding: 20px;
+    background-color: #f4f7fc;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Легкая тень для меню */
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 600px) {
+    .wrapper {
+        margin: 30px;
+        padding: 20px;
+    }
+
+    .header {
+        font-size: 22px;
+        margin-bottom: 30px; /* Увеличен отступ снизу */
+    }
+
+    input, select, button {
+        font-size: 14px;
+        padding: 12px; /* Увеличен внутренний отступ */
+    }
+
+    .field {
+        gap: 20px; /* Уменьшен отступ между элементами формы */
+    }
+
+    a {
+        font-size: 14px;
+    }
+}

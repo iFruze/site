@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">Admin Panel</div>
+        
+        <!-- Блок с меню -->
+        <div class="menu">
+            <a href="zakaz.html">Список всех заказов</a>
+            <a href="catalog.html">Список всех товаров</a>
+        </div>
+
+        <div class="field">
+            <form id="product-form" enctype="multipart/form-data">
+                <input type="file" name="photo" accept="image/*" id="img" required>
+                <input id="title" name="title" required placeholder="Название товара">
+                <input id="opis" name="opis" required placeholder="Описание">
+                <select id="cat" name="cat" required>
+                    <option value="" disabled selected>Выберите категорию</option>
+                    <option value="cycle">Велосипед</option>
+                    <option value="shl">Шлемы</option>
+                    <option value="velM">Майки</option>
+                    <option value="och">Очки</option>
+                    <option value="velT">Штаны/шорты</option>
+                    <option value="perch">Перчатки</option>
+                    <option value="obv">Туфли</option>
+                    <option value="golov">Головные уборы</option>
+                </select>
+                <input id="cost" type="number" name="cost" required placeholder="Цена">
+                <button type="submit" id="submit-btn">Добавить товар</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('product-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Запрашиваем подтверждение у пользователя
+            const userConfirmed = confirm('Вы уверены, что хотите добавить этот товар?');
+
+            if (userConfirmed) {
+                const formData = new FormData(this);
+
+                fetch('/add-product', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(data => {
+                    alert(data);
+                    this.reset(); // очищаем форму
+                })
+                .catch(error => console.error('Ошибка:', error));
+            } else {
+                alert('Добавление товара отменено.');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+/* Общие стили для страницы */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 20px 0;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+/* Стили для таблицы */
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+td {
+    background-color: #ffffff;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Стиль для кнопки удаления */
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+.delete-btn:focus {
+    outline: none;
+}
+
+/* Стиль для подтверждения удаления (модальное окно) */
+.delete-btn:active {
+    transform: scale(0.98);
+}
+
+/* Стили для таблицы с кнопками */
+td .delete-btn {
+    margin-top: 5px;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Приемлемые отступы и выравнивание таблицы */
+#orders-table {
+    width: 80%;
+    margin-top: 30px;
+}
+
+#orders-table thead {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#orders-table tbody {
+    font-size: 14px;
+}
+
+/* Адаптивность */
+@media screen and (max-width: 768px) {
+    table {
+        width: 95%;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
